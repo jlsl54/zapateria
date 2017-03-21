@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('Directorio de acceso restringido');
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +77,7 @@ $config['url_suffix'] = '';
 |
 */
 $config['language']	= 'english';
+$config['language']	= 'spanish';
 
 /*
 |--------------------------------------------------------------------------

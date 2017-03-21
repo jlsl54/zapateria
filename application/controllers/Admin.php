@@ -21,7 +21,7 @@ class Admin extends CI_Controller {
             if($this->session->userdata("admin-logeado") == TRUE):
                 if($metodo == NULL):
                     $result1 = $this->categorias->findAll();
-            		$result2 = $this->autores->findAll();
+            		$result2 = $this->marcas->findAll();
 
             		$data = array(
             			"findAllCategorias" => $result1,
@@ -39,23 +39,23 @@ class Admin extends CI_Controller {
                             $this->categorias->addCategoria($categoria, $rewrite);
                             break;
                         case 2:
-                            $autor = $this->input->post("autor");
-                            $this->autores->addAutor($autor);
+                            $marca = $this->input->post("marca");
+                            $this->marcas->addMarca($marca);
                             break;
                         case 3:
-                            $titulo = $this->input->post("titulo");
+                            $titulo = $this->input->post("modelo");
                             $url = $this->input->post("url");
                             $precio = $this->input->post("precio");
                             $descripcion = $this->input->post("descripcion");
                             $categoria = $this->input->post("categoria");
-                            $autor = $this->input->post("autor");
+                            $marca = $this->input->post("marca");
 
                             if(isset($_FILES["imagen"])){
 
                                    move_uploaded_file($_FILES["imagen"]['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . "/github/web-bookstore/assets/images/libros/".$url.".jpg");
                              }
 
-                             $this->libros->addLibro($titulo, $url, $precio, $descripcion, $url . ".jpg", $categoria, $autor);
+                             $this->productos->addProducto($model, $url, $precio, $descripcion, $url . ".jpg", $categoria, $marca);
 
                             break;
                     }

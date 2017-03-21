@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('Acceso no permitido.');
 
 /*
 | -------------------------------------------------------------------
@@ -131,5 +131,6 @@ $autoload['language'] = array();
 | in the controller:
 |
 |	$autoload['model'] = array('first_model' => 'first');
+ * $autoload['model'] = array('libros','categorias','autores');
 */
-$autoload['model'] = array('libros','categorias','autores');
+$autoload['model'] =array('productos','categorias','marcas');

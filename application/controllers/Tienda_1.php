@@ -5,18 +5,18 @@ class Tienda extends CI_Controller {
 
 	public function index() {
 
-		$result = $this->productos->findAll();
-		$result1 = $this->productos->findByLimit(3);
+		$result = $this->libros->findAll();
+		$result1 = $this->libros->findByLimit(3);
 		$result2 = $this->categorias->findAll();
-		$result3 = $this->productos->findByCategoria();
-		$result4 = $this->marcas->findAll();
+		$result3 = $this->libros->findByCategoria();
+		$result4 = $this->autores->findAll();
 
 		$data = array(
-			"findAllProductos" => $result,
-			"findByLimitProductos" => $result1,
+			"findAllLibros" => $result,
+			"findByLimitLibros" => $result1,
 			"findAllCategorias" => $result2,
-			"findByCategoriaProductos" => $result3,
-			"findAllMarcas" => $result4
+			"findByCategoriaLibros" => $result3,
+			"findAllAutores" => $result4
 		);
 
         $this->load->view('templates/header');
@@ -26,21 +26,21 @@ class Tienda extends CI_Controller {
 
 	public function detalles($rewrite = "") {
 
-			if($this->productos->findByRewrite($rewrite)):
-				$result = $this->productos->findAll();
-				$result1 = $this->productos->findAll();
-				$result2 = $this->categorias->findByLimit(3);
+			if($this->libros->findByRewrite($rewrite)):
+				$result = $this->libros->findAll();
+				$result1 = $this->autores->findAll();
+				$result2 = $this->libros->findByLimit(3);
 
-				$fila = $this->productos->findByRewrite($rewrite);
+				$fila = $this->libros->findByRewrite($rewrite);
 				$data = array(
-					"id" => $fila->productoId,
-					"modelo" => $fila->modelo,
+					"id" => $fila->libroId,
+					"titulo" => $fila->titulo,
 					"descripcion" => $fila->descripcion,
 					"imagen" => $fila->imagen,
 					"precio" => $fila->precioNuevo,
 					"findAllCategorias" => $result,
-					"findAllMarcas" => $result1,
-					"findByLimitProductos" => $result2
+					"findAllAutores" => $result1,
+					"findByLimitLibros" => $result2
 				);
 
 				$this->load->view('templates/header');

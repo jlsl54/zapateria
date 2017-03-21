@@ -24,17 +24,17 @@ echo '
 						</ol>
 
 						<div class="carousel-inner">';
-							foreach ($findByLimitProductos->result() as $producto):
+							foreach ($findByLimitLibros->result() as $libro):
 								echo '
 								<div class="item">
 									<div class="col-sm-6">
 										<h1><span>M</span>ARIETA</h1>
-										<h2>' . $producto->modelo . '</h2>
-										<p>' . $producto->descripcion . '</p>
-										<a href="' . base_url() . 'tienda/' . $producto->rewrite . '" class="btn btn-default get">Recibir ahora</a>
+										<h2>' . $libro->titulo . '</h2>
+										<p>' . $libro->descripcion . '</p>
+										<a href="' . base_url() . 'tienda/' . $libro->rewrite . '" class="btn btn-default get">Recibir ahora</a>
 									</div>
 									<div class="col-sm-4">
-										<img src="' . base_url() . 'assets/images/productos/' . $producto->imagen . '" class="girl img-responsive" alt="" />
+										<img src="' . base_url() . 'assets/images/libros/' . $libro->imagen . '" class="girl img-responsive" alt="" />
 									</div>
 								</div>';
 							endforeach;
@@ -76,9 +76,9 @@ echo '
 							<h2>MARCAS</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">';
-								foreach ($findAllMarcas->result() as $marcas):
+								foreach ($findAllAutores->result() as $autores):
 									echo '
-									<li><a href="#">' . $marcas->marca . '</a></li>';
+									<li><a href="#">' . $autores->nombre . '</a></li>';
 								endforeach;
 								echo '
 								</ul>
@@ -95,21 +95,21 @@ echo '
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">ÚLTIMOS PRODUCTOS</h2>';
-						foreach ($findByLimitProductosInicio->result() as $producto):
+						foreach ($findByLimitLibrosInicio->result() as $libro):
 							echo '<div class="col-sm-4">
 								<div class="product-image-wrapper">
 									<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="' . base_url() . 'assets/images/productos/' . $producto->imagen . '" alt="" />
-											<h2> ' . $producto->precioNuevo . '€</h2>
-											<p>' . $producto->modelo. '</p>
-											<a href="' . base_url() . 'tienda/' . $producto->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
+											<img src="' . base_url() . 'assets/images/libros/' . $libro->imagen . '" alt="" />
+											<h2> ' . $libro->precioNuevo . '€</h2>
+											<p>' . $libro->titulo . '</p>
+											<a href="' . base_url() . 'tienda/' . $libro->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2> ' . $producto->precioNuevo . '€</h2>
-												<p>' . $producto->modelo . '</p>
-												<a href="' . base_url() . 'tienda/' . $producto->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
+												<h2> ' . $libro->precioNuevo . '€</h2>
+												<p>' . $libro->titulo . '</p>
+												<a href="' . base_url() . 'tienda/' . $libro->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
 											</div>
 										</div>
 									</div>
@@ -139,18 +139,18 @@ echo '
 							echo '
 							<div class="tab-pane fade in" id="' . $categoria->categoriaId . '" >';
 							$i = 0;
-							foreach ($findByCategoriaProductos->result() as $producto):
-								if($producto->categoriaId == $categoria->categoriaId && $i<4):
+							foreach ($findByCategoriaLibros->result() as $libro):
+								if($libro->categoriaId == $categoria->categoriaId && $i<4):
 									$i++;
 								echo '
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="' . base_url() . 'assets/images/productos/' . $producto->imagen . '" alt="" />
-												<h2>' . $producto->precioNuevo . '€</h2>
-												<p>' . $producto->modelo . '</p>
-												<a href="' . base_url() . 'tienda/' . $producto->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
+												<img src="' . base_url() . 'assets/images/libros/' . $libro->imagen . '" alt="" />
+												<h2>' . $libro->precioNuevo . '€</h2>
+												<p>' . $libro->titulo . '</p>
+												<a href="' . base_url() . 'tienda/' . $libro->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
 											</div>
 										</div>
 									</div>

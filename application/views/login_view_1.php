@@ -6,7 +6,7 @@ echo '
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form"><!--login form-->
-                    <h2>Ingresar a tu cuenta</h2>
+                    <h2>Ingresar tu cuenta</h2>
                     <form>
                         <input type="email" name="email" placeholder="Email" required/>
                         <input type="password" name="contrasena" placeholder="Contraseña" required/>
@@ -22,7 +22,7 @@ echo '
                     <h2>Registrar usuario</h2>
                     <form>
                         <input type="text" name="nombre" placeholder="Nombre" required/>
-                        <input type="text" name="apellido/s" placeholder="Apellido" required/>
+                        <input type="text" name="apellido" placeholder="Apellido" required/>
                         <input type="text" name="direccion" placeholder="Dirección" required/>
                         <input type="email" name="email" placeholder="Email" required/>
                         <input type="password" name="contrasena" placeholder="Contraseña" required/>

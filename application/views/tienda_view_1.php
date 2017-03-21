@@ -41,11 +41,11 @@ echo'
 							<div class="brands-name">
                                                            <small>
 								<ul class="nav nav-pills nav-stacked">';
-								foreach ($findAllMarcas->result() as $marcas):
+								foreach ($findAllAutores->result() as $autores):
 									echo '
-									<small><li><a href="#">' . $marcas->marca . '</a></li></small>';
+									<small><li><a href="#">' . $autores->nombre . '</a></li></small>';
 								endforeach;
-					 			echo '
+								echo '
 								</ul>
                                                             </small>    
 							</div>
@@ -62,21 +62,21 @@ echo'
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 					<h2 class="title text-center">ÚLTIMOS PRODUCTOS</h2>';
-					foreach ($findAllProductos->result() as $producto):
+					foreach ($findAllLibros->result() as $libro):
 						echo '<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="' . base_url() . 'assets/images/productos/' . $producto->imagen . '" alt="" />
-										<h2> ' . $producto->precioNuevo . '€</h2>
-										<p>' . $producto->modelo . '</p>
-										<a href="' . base_url() . 'tienda/' . $producto->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
+										<img src="' . base_url() . 'assets/images/libros/' . $libro->imagen . '" alt="" />
+										<h2> ' . $libro->precioNuevo . '€</h2>
+										<p>' . $libro->titulo . '</p>
+										<a href="' . base_url() . 'tienda/' . $libro->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2> ' . $producto->precioNuevo . '€</h2>
-											<p>' . $producto->modelo . '</p>
-											<a href="' . base_url() . 'tienda/' . $producto->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
+											<h2> ' . $libro->precioNuevo . '€</h2>
+											<p>' . $libro->titulo . '</p>
+											<a href="' . base_url() . 'tienda/' . $libro->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
 										</div>
 									</div>
 								</div>
@@ -86,12 +86,12 @@ echo'
 				echo '
 
 					</div><!--features_items-->
-					<ul class="pagination">
+		<!--			<ul class="pagination">
 						<li class="active"><a href="">1</a></li>
 						<li><a href="">2</a></li>
 						<li><a href="">3</a></li>
 						<li><a href="">&raquo;</a></li>
-					</ul>
+					</ul>-->
 				</div>
 			</div>
 		</div>

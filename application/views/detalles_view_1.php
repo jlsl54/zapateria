@@ -33,9 +33,9 @@ echo '
 							<h2>MARCAS</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">';
-								foreach ($findAllMarcas->result() as $marcas):
+								foreach ($findAllAutores->result() as $autores):
 									echo '
-									<li><a href="#">' . $marcas->marca. '</a></li>';
+									<li><a href="#">' . $autores->nombre . '</a></li>';
 								endforeach;
 								echo '
 								</ul>
@@ -54,14 +54,14 @@ echo '
 					<div class="product-details"><!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="' . base_url() . 'assets/images/productos/' . $imagen . '" alt="" />
+								<img src="' . base_url() . 'assets/images/libros/' . $imagen . '" alt="" />
 							<!--	<h3>ZOOM</h3>   ojo -->
 							</div>
 						</div>
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
 								<img src="' . base_url() . 'assets/images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>' . $modelo . '</h2>
+								<h2>' . $titulo . '</h2>
 								<p>Web ID: ' . $id . '</p>
 								<img src="' . base_url() . 'assets/images/product-details/rating.png" alt="" />
 								<span>
@@ -102,16 +102,16 @@ echo '
 						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 							<div class="carousel-inner">
 								<div class="item">';
-								foreach($findByLimitProductos->result() as $producto):
+								foreach($findByLimitLibros->result() as $libro):
 									echo '
 									<div class="col-sm-4">
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="' . base_url() . 'assets/images/productos/' . $producto->imagen . '" alt="" />
-													<h2> ' . $producto->precioNuevo . '€</h2>
-													<p>' . $producto->modelo . '</p>
-													<a href="' . base_url() . 'tienda/' . $producto->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
+													<img src="' . base_url() . 'assets/images/libros/' . $libro->imagen . '" alt="" />
+													<h2> ' . $libro->precioNuevo . '€</h2>
+													<p>' . $libro->titulo . '</p>
+													<a href="' . base_url() . 'tienda/' . $libro->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
 												</div>
 											</div>
 										</div>
@@ -120,16 +120,16 @@ echo '
 								echo '
 								</div>
 								<div class="item">';
-								foreach($findByLimitProductos->result() as $producto):
+								foreach($findByLimitLibros->result() as $libro):
 									echo '
 									<div class="col-sm-4">
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="' . base_url() . 'assets/images/productos/' . $producto->imagen . '" alt="" />
-													<h2> ' . $producto->precioNuevo . ' € </h2>
-													<p>' . $producto->modelo . '</p>
-													<a href="' . base_url() . 'tienda/' . $producto->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
+													<img src="' . base_url() . 'assets/images/libros/' . $libro->imagen . '" alt="" />
+													<h2> ' . $libro->precioNuevo . ' € </h2>
+													<p>' . $libro->titulo . '</p>
+													<a href="' . base_url() . 'tienda/' . $libro->rewrite . '" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
 												</div>
 											</div>
 										</div>

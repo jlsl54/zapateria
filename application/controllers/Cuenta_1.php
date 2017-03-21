@@ -5,12 +5,12 @@ class Cuenta extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model("productos_usuario");
+        $this->load->model("libros_usuario");
     }
 
 	public function index() {
         if($this->session->userdata("logeado") == TRUE):
-            $result = $this->productos_usuario->findByUsuario($this->session->userdata("id"));
+            $result = $this->libros_usuario->findByUsuario($this->session->userdata("id"));
 
     		$data = array(
     			"findByUsuario" => $result

@@ -4,18 +4,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Inicio extends CI_Controller {
 
 	public function index() {
-		$result = $this->productos->findByLimit(6);
-		$result1 = $this->productos->findByLimit(3);
+		$result = $this->libros->findByLimit(6);
+		$result1 = $this->libros->findByLimit(3);
 		$result2 = $this->categorias->findAll();
-		$result3 = $this->productos->findByCategoria();
-		$result4 = $this->marcas->findAll();
+		$result3 = $this->libros->findByCategoria();
+		$result4 = $this->autores->findAll();
 
 		$data = array(
-			"findByLimitProductosInicio" => $result,
-			"findByLimitProductos" => $result1,
+			"findByLimitLibrosInicio" => $result,
+			"findByLimitLibros" => $result1,
 			"findAllCategorias" => $result2,
-			"findByCategoriaProductos" => $result3,
-			"findAllMarcas" => $result4
+			"findByCategoriaLibros" => $result3,
+			"findAllAutores" => $result4
 		);
 
 		if(!isset($_SESSION["contador"])) $_SESSION["contador"] = 0;
